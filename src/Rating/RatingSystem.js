@@ -1,19 +1,14 @@
 import React, { Component }from 'react'
 import ReactDOM from 'react-dom';
 import Rating from 'react-rating-system';
+import star from './star.png'
  
-class YourClass extends React.Component {
+export default class RatingSystem extends React.Component {
     render() {
         return (
-            <Rating>
-                <img src={require('./star.png')}/>
-            </Rating>
+            <Rating image={star} bg="#333333"/>
         );
     }
 }
- 
-ReactDOM.render(
-    <YourClass />, 
-    document.getElementById('app')
-);
+
  

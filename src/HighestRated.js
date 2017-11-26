@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { render } from 'react'
 import { Grid, Row, Thumbnail, Button, Col } from 'react-bootstrap'
-import Rating from 'react-rating-system'
+import RatingSystem from './Rating/RatingSystem'
 
 class HighestRated extends Component {
     render() {
@@ -28,7 +28,7 @@ class HighestRated extends Component {
                 </Col>
                 <Col xs={6} md={4}>
                   <Thumbnail src="/PicsOfLocations/Brazil.jpg" alt="242x200">
-                  <Rating/>
+                  <RatingSystem/>
                     <h3>Thumbnail label</h3>
                     <p>Description</p>
                     <p>

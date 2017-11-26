@@ -12,7 +12,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Navigation/>
-          <Route path="/" component={Slider}/>
+          <Route exact path="/" component={Slider}/>
           <Route path="/Highest-Rated" component={HighestRated} />
         </div>
       </BrowserRouter>
