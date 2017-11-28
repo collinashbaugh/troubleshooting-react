@@ -1,12 +1,18 @@
 import React, { Component }from 'react'
-import ReactDOM from 'react-dom';
 import Rating from 'react-rating-system';
 import star from './star.png'
  
-export default class RatingSystem extends React.Component {
+export default class RatingSystem extends Component {
     render() {
         return (
-            <Rating image={star} bg="#333333"/>
+            <Rating
+                image={star}
+                bg="#333333"
+                fillBG="gold"
+                numberStars={10}
+                lockRating={true}
+                containerStyle={{ maxWidth: '300px' }}
+            />
         );
     }
 }
