@@ -6,7 +6,7 @@ import Navigation from './Navigation.js';
 import Slider from './Carousel.js';
 import HighestRated from './HighestRated.js'
 import LogIn from './LogIn.js'
-import HighestRatedList from './HighestRatedList.js'
+import CountriesList from './countries/CountriesList.js'
 
 class App extends Component {
   render() {
@@ -15,7 +15,7 @@ class App extends Component {
         <div className="App">
           <Navigation/>
           <Route exact path="/" component={Slider}/>
-          <Route path="/Highest-Rated" component={HighestRatedList} />
+          <Route path="/Highest-Rated" component={CountriesList} />
           <Route path="/LogIn" component={LogIn} />
         </div>
       </BrowserRouter>
