@@ -9,7 +9,7 @@ export default class RatingSystem extends Component {
                 image={star}
                 bg="#333333"
                 fillBG="gold"
-                numberStars={10}
+                numberStars={this.props.rating}
                 lockRating={true}
                 containerStyle={{ maxWidth: '300px' }}
             />
