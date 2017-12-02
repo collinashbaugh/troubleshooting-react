@@ -10,19 +10,24 @@ import { withRouter } from 'react-router-dom'
 
 class CountriesList extends Component {
     render() {
-        let countries = null
+        // let countries = null
 
-        if(this.props.allLocationsQuery.data.loading){
+       
+            const countries  = this.props.data
+       
+
+/*         if(this.props.allLocationsQuery.data.loading){
             return <h1>Loading Locations...</h1>
         }
 
         if (this.props.data.allLocations){
             countries = this.props.data.allLocations
-        }
+        } */
 
         return (
             <div>
-                {countries.map((location) => {
+                
+                 {countries.allLocations.map((location) => {
                 return <Col xs={6} md={4}>
                     <Thumbnail img width={242} height={200} alt="242x200">
                     <RatingSystem/>
@@ -56,4 +61,4 @@ class CountriesList extends Component {
         }
     `
 
-export default graphql(QUERY, {name: 'allLocationsQuery'})(withRouter(CountriesList));
+export default graphql(QUERY)(withRouter(CountriesList));
