@@ -1,16 +1,18 @@
 import React, { Component } from 'react'
 import { Grid, Row, Thumbnail, Button, Col } from 'react-bootstrap'
 import { graphql } from 'react-apollo'
+import gql from 'graphql-tag'
 
 import RatingSystem from '../Rating/RatingSystem'
 import CountriesService from './service' 
+import { withRouter } from 'react-router-dom'
 
 
 class CountriesList extends Component {
     render() {
         let countries = null
 
-        if(this.props.data.loading){
+        if(this.props.allLocationsQuery.data.loading){
             return <h1>Loading Locations...</h1>
         }
 
@@ -37,10 +39,21 @@ class CountriesList extends Component {
     }
 }
 
-const withAllCountriesQuery = graphql(
+/* const withAllCountriesQuery = graphql(
     CountriesService.allCountries,
     {options: 
         {fetchPolicy: 'network-only'}
-    })(CountriesList)
+    })(CountriesList) */
 
-export default withAllCountriesQuery;
+    const QUERY = gql`
+        query {
+            allLocations {
+            name
+            region
+            id
+            rating
+            }
+        }
+    `
+
+export default graphql(QUERY, {name: 'allLocationsQuery'})(withRouter(CountriesList));
