@@ -28,7 +28,7 @@ class CountriesList extends Component {
           return (
             <Col xs={6} md={4}>
               <Thumbnail img width={242} height={200} alt="242x200">
-                <RatingSystem />
+                      <RatingSystem rating={location.rating}/>
                 <h3>{location.name}</h3>
                 <p>{location.description}</p>
                 <p>
