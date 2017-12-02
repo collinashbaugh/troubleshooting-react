@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter, Route} from 'react-router-dom';
 
-import Navigation from './Navigation.js';
-import Slider from './Carousel.js';
-import HighestRated from './HighestRated.js'
-import LogIn from './LogIn.js'
+import Navigation from './components/Navigation.js';
+import Slider from './components/Carousel.js';
+import LogIn from './components/LogIn.js'
 import CountriesList from './countries/CountriesList.js'
 
 class App extends Component {

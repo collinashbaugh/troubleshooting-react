@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Carousel } from 'react-bootstrap';
-import brazil from './PicsOfLocations/Brazil.jpg'
-import cairo from './PicsOfLocations/Cairo.jpg'
-import hawaii from './PicsOfLocations/hawaii.jpg'
-import lasvegas from './PicsOfLocations/Las-Vegas.jpg'
-import paris from './PicsOfLocations/Paris.jpg'
-import petra from './PicsOfLocations/Petra.jpg'
-import sydney from './PicsOfLocations/Sydney.jpg'
-import thailand from './PicsOfLocations/Thailand.jpg'
-import tikal from './PicsOfLocations/Tikal.jpg'
+import brazil from '../PicsOfLocations/Brazil.jpg'
+import cairo from '../PicsOfLocations/Cairo.jpg'
+import hawaii from '../PicsOfLocations/hawaii.jpg'
+import lasvegas from '../PicsOfLocations/Las-Vegas.jpg'
+import paris from '../PicsOfLocations/Paris.jpg'
+import petra from '../PicsOfLocations/Petra.jpg'
+import sydney from '../PicsOfLocations/Sydney.jpg'
+import thailand from '../PicsOfLocations/Thailand.jpg'
+import tikal from '../PicsOfLocations/Tikal.jpg'
 
 class Slider extends Component {
     render() {
