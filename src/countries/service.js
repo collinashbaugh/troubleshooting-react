@@ -37,7 +37,7 @@ class CountriesService {
             ) {
             name
             id
-                rating
+            rating
             region
             }
         }
