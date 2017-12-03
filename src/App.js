@@ -6,6 +6,7 @@ import AddCountry from './countries/AddCountry.js';
 import Navigation from './components/Navigation.js';
 import Slider from './components/Carousel.js';
 import LogIn from './components/LogIn.js'
+import SignUp from './components/SignUp.js'
 import CountriesList from './countries/CountriesList.js'
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
           <Route exact path="/" component={Slider}/>
           <Route path="/Highest-Rated" component={CountriesList} />
           <Route path="/LogIn" component={LogIn} />
+          <Route path="/SignUp" component={SignUp} />
         </div>
       </BrowserRouter>
     );

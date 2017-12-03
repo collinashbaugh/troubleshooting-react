@@ -20,7 +20,7 @@ class Navigation extends Component {
               </Nav>
               <Nav pullRight>
                 <NavItem eventKey={1} href="#"><Link to="/LogIn">Log In</Link></NavItem>
-                <NavItem eventKey={2} href="#">Sign Up</NavItem>
+                <NavItem eventKey={2} href="#"><Link to="/SignUp">Sign Up</Link></NavItem>
               </Nav>
             </Navbar.Collapse>
           </Navbar>

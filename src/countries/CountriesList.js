@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid, Row, Thumbnail, Button, Col } from 'react-bootstrap'
+import { Thumbnail, Button, Col } from 'react-bootstrap'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 

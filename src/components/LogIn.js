@@ -1,5 +1,14 @@
 import React, { Component } from 'react';
 import { Form, FormGroup, Col, FormControl, ControlLabel, Checkbox, Button } from 'react-bootstrap';
+import { ApolloClient } from 'apollo-client'
+import { HttpLink, InMemoryCache } from 'apollo-client-preset'
+
+const httpLink = new HttpLink ({ uri:'https://api.graph.cool/simple/v1/cjaj16yf90e3w0140hsr3z5yr'})
+
+const client = new ApolloClient ({
+    link: httpLink,
+    cache: new InMemoryCache
+});
 
 class LogIn extends Component {
     render() {
