@@ -18,19 +18,19 @@ class AddCountry extends Component {
         return (
             <Form horizontal>
             <FormGroup controlId="formHorizontalName">
-              <Col componentClass={ControlLabel} sm={2}>
+              <Col componentClass={ControlLabel} sm={3}>
                 Name
               </Col>
-              <Col sm={10}>
+              <Col sm={5}>
                 <FormControl type="text" placeholder="Name" />
               </Col>
             </FormGroup>
         
             <FormGroup controlId="formHorizontalRegion">
-              <Col componentClass={ControlLabel} sm={2}>
+              <Col componentClass={ControlLabel} sm={3}>
                 Region
               </Col>
-              <Col sm={10}>
+              <Col sm={5}>
                 <FormControl type="text" placeholder="Region" />
               </Col>
             </FormGroup>
@@ -38,12 +38,12 @@ class AddCountry extends Component {
 
 
             <FormGroup>
-              <Col smOffset={2} sm={10}>
+              <Col smOffset={2} sm={5}>
               </Col>
             </FormGroup>
         
             <FormGroup>
-              <Col smOffset={2} sm={10}>
+              <Col smOffset={3} sm={5}>
                 <Button type="submit">
                   Sign in
                 </Button>
