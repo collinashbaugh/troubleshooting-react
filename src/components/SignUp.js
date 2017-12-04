@@ -38,24 +38,24 @@ class SignUp extends Component {
                     <FormGroup>
                     <FormControl type="text" 
                     placeholder="Name" 
-                    value={this.state.name}
+                    // value={this.state.name}
                     onChange={(e) => this.setState({ name: e.target.value })}
                     />
                     </FormGroup>
 
-                    <FormGroup controlId="formHorizontalEmail">
+                    <FormGroup>
                     <FormControl type="email" 
                     placeholder="Email"
-                    value={this.state.email}
-                    onchange={(e) => this.setState({ email: e.target.value })}
+                    // value={this.state.email}
+                    onChange={(e) => this.setState({ email: e.target.value })}
                     />
                     </FormGroup>
 
                     <FormGroup>
                     <FormControl type="password" 
                     placeholder="Password"
-                    value={this.state.password}
-                    onchange={(e) => this.setState({ password: e.target.value })} 
+                    // value={this.state.password}
+                    onChange={(e) => this.setState({ password: e.target.value })} 
                     />
                     </FormGroup>
                     

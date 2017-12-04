@@ -4,7 +4,7 @@ import gql from 'graphql-tag'
 class CountriesService {
     allCountries = gql`
         query {
-            allLocations {
+            allLocations (filter: {name_in: ["Chile", "Costa Rica"]}) {
                 name 
                 region
                 id

@@ -19,8 +19,8 @@ class Navigation extends Component {
                 <NavItem eventKey={3}>Most Visited</NavItem>
               </Nav>
               <Nav pullRight>
-                <NavItem eventKey={1} href="#"><Link to="/LogIn">Log In</Link></NavItem>
-                <NavItem eventKey={2} href="#"><Link to="/SignUp">Sign Up</Link></NavItem>
+                <NavItem eventKey={1}><Link to="/LogIn">Log In</Link></NavItem>
+                <NavItem eventKey={2}><Link to="/SignUp">Sign Up</Link></NavItem>
               </Nav>
             </Navbar.Collapse>
           </Navbar>

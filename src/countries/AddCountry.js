@@ -14,15 +14,33 @@ class AddCountry extends Component {
         }
     }
 
+    handleSubmit = (evt) => {
+      evt.preventDefault()
+      this.props.mutate({ 
+        variables: {
+          name: this.state.name,
+          region: this.state.region,
+          rating: this.state.rating
+        }
+       }).then(() => {
+         alert("You Added a Country")
+       }).catch((err) => {
+         alert("Error whatever" + err)
+       })
+    }
+
     render() {
         return (
-            <Form horizontal>
+            <Form horizontal onSubmit={this.handleSubmit}>
             <FormGroup controlId="formHorizontalName">
               <Col componentClass={ControlLabel} sm={3}>
                 Name
               </Col>
               <Col sm={5}>
-                <FormControl type="text" placeholder="Name" />
+                <FormControl type="text" 
+                placeholder="Name"
+                onChange={(e) => this.setState({ name: e.target.value })} 
+                />
               </Col>
             </FormGroup>
         
@@ -31,14 +49,22 @@ class AddCountry extends Component {
                 Region
               </Col>
               <Col sm={5}>
-                <FormControl type="text" placeholder="Region" />
+                <FormControl type="text" 
+                placeholder="Region" 
+                onChange={(e) => this.setState({ region: e.target.value })}
+                />
               </Col>
             </FormGroup>
             
-
-
-            <FormGroup>
-              <Col smOffset={2} sm={5}>
+            <FormGroup controlId="formHorizontalRating">
+              <Col componentClass={ControlLabel} sm={3}>
+                Region
+              </Col>
+              <Col sm={5}>
+                <FormControl type="text" 
+                placeholder="Rating" 
+                onChange={(e) => this.setState({ rating: parseInt(e.target.value) })}
+                />
               </Col>
             </FormGroup>
         

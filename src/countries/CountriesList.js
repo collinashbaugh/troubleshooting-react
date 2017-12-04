@@ -30,7 +30,7 @@ class CountriesList extends Component {
               <Thumbnail img width={242} height={200} alt="242x200">
                       <RatingSystem rating={location.rating}/>
                 <h3>{location.name}</h3>
-                <p>{location.description}</p>
+                <p>{location.region}</p>
                 <p>
                   <Button bsStyle="primary">Visit</Button>&nbsp;
                 </p>
@@ -51,7 +51,11 @@ class CountriesList extends Component {
 
 const QUERY = gql`
   query {
-    allLocations {
+    allLocations 
+    (filter: 
+      {name_in: 
+        ["Chile", "Costa Rica"]
+      }) {
       name
       region
       id
