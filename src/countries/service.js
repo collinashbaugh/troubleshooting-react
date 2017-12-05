@@ -44,10 +44,10 @@ class CountriesService {
     `
 
     deleteCountry = gql`
-    mutation {
+    mutation ($id: ID!) {
         deleteLocation(
-          id: ""
-        ){
+          id: $id 
+        ) {
           name
           id
         }
