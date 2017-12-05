@@ -9,6 +9,7 @@ import Slider from './components/Carousel.js';
 import SignUp from './components/SignUp.js'
 import CountriesList from './countries/CountriesList.js'
 import DeleteCountry from './countries/RemoveCountry'
+import UpdateCountry from './countries/UpdateCountry'
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
           <Navigation/>
           <Route exact path="/Countries/Delete" component={DeleteCountry} />
           <Route exact path="/Countries/New" component={AddCountry}/>
+          <Route exact path="/Countries/Update" component={UpdateCountry}/>
           <Route exact path="/" component={Slider}/>
           <Route path="/Highest-Rated" component={CountriesList} />
           {/* <Route path="/LogIn" component={LogIn} /> */}
