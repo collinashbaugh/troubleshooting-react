@@ -4,7 +4,7 @@ import gql from 'graphql-tag'
 class CountriesService {
     allCountries = gql`
         query {
-            allLocations (filter: {name_in: ["Chile", "Costa Rica"]}) {
+            allLocations {
                 name 
                 region
                 id
@@ -41,6 +41,17 @@ class CountriesService {
             region
             }
         }
+    `
+
+    deleteCountry = gql`
+    mutation {
+        deleteLocation(
+          id: ""
+        ){
+          name
+          id
+        }
+      }
     `
 }
 

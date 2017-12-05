@@ -1,53 +1,67 @@
 import React, { Component } from 'react';
 import { Form, FormGroup, Col, FormControl, ControlLabel, Checkbox, Button } from 'react-bootstrap';
-import { ApolloClient } from 'apollo-client'
-import { HttpLink, InMemoryCache } from 'apollo-client-preset'
 
-const httpLink = new HttpLink ({ uri:'https://api.graph.cool/simple/v1/cjaj16yf90e3w0140hsr3z5yr'})
+import graphql from 'react-apollo/graphql';
+import gql from 'graphql-tag'
 
-const client = new ApolloClient ({
-    link: httpLink,
-    cache: new InMemoryCache
-});
+/* class LogIn extends Component {
+  constructor(props) {
+    super()
 
-class LogIn extends Component {
+    this.state = {
+      email: '',
+      password: ''
+    }
+  }
+
+  _loginUser = async (event) => {
+    event.prevent.Default()
+    const { email, password } = this.state
+
+    try {
+      const response = await this.props.authenticateUserMutation({ variables: {email, password } })
+      localStorage.setItem('graphcoolToken', response.data.authenticateUser.token)
+      console.log(response.data)
+    } catch (e) {
+      console.log('An error occured: ', e)
+    }
+  }
+
     render() {
         return (
-            <Form horizontal>
+          <Col componentClass={ControlLabel} sm={5} smOffset={3}>
+            <Form horizontal onSubmit={this.loginUser}>
             <FormGroup controlId="formHorizontalEmail">
-              <Col componentClass={ControlLabel} sm={3}>
-                Email
-              </Col>
-              <Col sm={5}>
-                <FormControl type="email" placeholder="Email" />
-              </Col>
+                <FormControl type="email" 
+                placeholder="Email" 
+                onChange={(e) => this.setState({ email: e.target.value })}
+                />
             </FormGroup>
         
             <FormGroup controlId="formHorizontalPassword">
-              <Col componentClass={ControlLabel} sm={3}>
-                Password
-              </Col>
-              <Col sm={5}>
-                <FormControl type="password" placeholder="Password" />
-              </Col>
+              <FormControl type="password" 
+              placeholder="Password" 
+              onChange={(e) => this.setState({ email: e.target.value })}
+              />
             </FormGroup>
         
             <FormGroup>
-              <Col smOffset={2} sm={10}>
-                <Checkbox>Remember me</Checkbox>
-              </Col>
-            </FormGroup>
-        
-            <FormGroup>
-              <Col smOffset={2} sm={10}>
                 <Button type="submit">
                   Sign in
                 </Button>
-              </Col>
             </FormGroup>
           </Form>
+        </Col>
         );
     }
 }
 
-export default LogIn;
+const AUTHENTICATE_EMAIL_USER = gql`
+mutation AuthenticateUser($email: String!, password: String!) {
+  authenticateUser(email: $email, password: $password ) {
+    token
+  }
+}
+`
+
+export default graphql(AUTHENTICATE_EMAIL_USER, { name: 'authenticateUserMutation' }) (LogIn); */

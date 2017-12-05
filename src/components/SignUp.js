@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, FormGroup, Col, FormControl, Button, ControlLabel } from 'react-bootstrap'
+import { FormGroup, Col, FormControl, Button, ControlLabel } from 'react-bootstrap'
 
 import graphql from 'react-apollo/graphql';
 import gql from 'graphql-tag'
@@ -77,4 +77,4 @@ const SIGNUP_EMAIL_USER = gql`
     }
 `
 
-export default graphql(SIGNUP_EMAIL_USER, { name: 'signUserMutation'})(SignUp)
+export default graphql(SIGNUP_EMAIL_USER, { name: 'signupUserMutation'})(SignUp)

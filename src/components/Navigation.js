@@ -8,7 +8,7 @@ class Navigation extends Component {
             <Navbar inverse collapseOnSelect>
             <Navbar.Header>
               <Navbar.Brand>
-                <a href=""><Link to="/">WhereToGo</Link></a>
+                <Link to="/">WhereToGo</Link>
               </Navbar.Brand>
               <Navbar.Toggle />
             </Navbar.Header>

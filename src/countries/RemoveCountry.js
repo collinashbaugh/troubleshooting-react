@@ -4,13 +4,12 @@ import { graphql } from 'react-apollo'
 
 import CountriesService from './service'
 
-class AddCountry extends Component {
+class DeleteCountry extends Component {
     constructor() {
         super()
         this.state = {
             name: '',
-            region: '',
-            rating: ''
+            id: ''
         }
     }
 
@@ -19,11 +18,10 @@ class AddCountry extends Component {
       this.props.mutate({ 
         variables: {
           name: this.state.name,
-          region: this.state.region,
-          rating: this.state.rating
+          id: this.state.id
         }
        }).then(() => {
-         alert("You Added a Country")
+         alert("You Deleted a Country")
        }).catch((err) => {
          alert("Error whatever" + err)
        })
@@ -44,26 +42,14 @@ class AddCountry extends Component {
               </Col>
             </FormGroup>
         
-            <FormGroup controlId="formHorizontalRegion">
+            <FormGroup controlId="formHorizontalID">
               <Col componentClass={ControlLabel} sm={3}>
-                Region
+                ID
               </Col>
               <Col sm={5}>
                 <FormControl type="text" 
-                placeholder="Region" 
-                onChange={(e) => this.setState({ region: e.target.value })}
-                />
-              </Col>
-            </FormGroup>
-            
-            <FormGroup controlId="formHorizontalRating">
-              <Col componentClass={ControlLabel} sm={3}>
-                Region
-              </Col>
-              <Col sm={5}>
-                <FormControl type="text" 
-                placeholder="Rating" 
-                onChange={(e) => this.setState({ rating: parseInt(e.target.value) })}
+                placeholder="id" 
+                onChange={(e) => this.setState({ id: e.target.value })}
                 />
               </Col>
             </FormGroup>
@@ -71,7 +57,7 @@ class AddCountry extends Component {
             <FormGroup>
               <Col smOffset={3} sm={5}>
                 <Button type="submit">
-                  Sign in
+                  Submit
                 </Button>
               </Col>
             </FormGroup>
@@ -83,10 +69,10 @@ class AddCountry extends Component {
 // graphql(query or mutation)(component)
 // graphql combines the mutation/query with the component
 
-const withCreateCountryQuery = graphql(
-    CountriesService.createCountry,
+const withDeleteCountryQuery = graphql(
+    CountriesService.deleteCountry,
     {options: 
         {fetchPolicy: 'network-only'}
-    })(AddCountry)
+    })(DeleteCountry)
 
-export default withCreateCountryQuery
+export default withDeleteCountryQuery

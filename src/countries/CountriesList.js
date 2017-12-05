@@ -4,8 +4,7 @@ import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
 import RatingSystem from '../Rating/RatingSystem'
-import CountriesService from './service'
-import { withRouter } from 'react-router-dom'
+
 
 class CountriesList extends Component {
   render() {
@@ -27,7 +26,7 @@ class CountriesList extends Component {
         {locations.allLocations.map(location => {
           return (
             <Col xs={6} md={4}>
-              <Thumbnail img width={242} height={200} alt="242x200">
+              <Thumbnail width={242} height={200} alt="242x200">
                       <RatingSystem rating={location.rating}/>
                 <h3>{location.name}</h3>
                 <p>{location.region}</p>
@@ -52,10 +51,8 @@ class CountriesList extends Component {
 const QUERY = gql`
   query {
     allLocations 
-    (filter: 
-      {name_in: 
-        ["Chile", "Costa Rica"]
-      }) {
+    (filter: {rating_in: [,7, 8, 9, 10]}) 
+      {
       name
       region
       id
