@@ -22,7 +22,7 @@ class UpdateCountry extends Component {
           name: this.state.name,
           region: this.state.region,
           rating: this.state.rating,
-          id: this.state.id//props.data
+          id: this.match.params.id
         }
        }).then(() => {
          alert("You Updated a Country")
@@ -32,6 +32,14 @@ class UpdateCountry extends Component {
     }
 
     render() {
+
+        //Chris example
+        
+        if (this.props.data.loading) {
+            return( <h1> Currently Loading.. </h1> )}
+
+        
+
         return (
             <Form horizontal onSubmit={this.handleSubmit}>
             <FormGroup controlId="formHorizontalName">
@@ -98,14 +106,14 @@ class UpdateCountry extends Component {
 // graphql combines the mutation/query with the component
 
 const withUpdateCountryQuery = graphql(
-    CountriesService.updateCountry,
-    {options: /* (ownProps) =>
-        {
+    CountriesService.location,
+    {options: (ownProps) =>
+        ({
             variables: {
                 id: ownProps.match.params.id
-            } */
-            {fetchPolicy: 'network-only'
-        }
+            },
+            fetchPolicy: 'network-only'
+        })
     })(UpdateCountry)
 
 export default withUpdateCountryQuery

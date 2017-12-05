@@ -53,6 +53,20 @@ class CountriesService {
         }
       }
     `
+
+    location = gql`
+    query ($id: ID!) {
+        Location(
+         id: $id
+       )
+       {
+         name
+         region
+         rating
+         id
+       }
+     }
+    `
 }
 
 export default new CountriesService()

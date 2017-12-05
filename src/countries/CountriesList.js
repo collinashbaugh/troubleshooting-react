@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Thumbnail, Button, Col } from 'react-bootstrap'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
+import { NavLink } from 'react-router-dom'
 
 import RatingSystem from '../Rating/RatingSystem'
 
@@ -9,6 +10,8 @@ import RatingSystem from '../Rating/RatingSystem'
 class CountriesList extends Component {
   render() {
   
+    //Thor example
+
     let locations = this.props.allLocationsQuery  
 
     if (locations && locations.loading) {
@@ -27,11 +30,11 @@ class CountriesList extends Component {
           return (
             <Col xs={6} md={4}>
               <Thumbnail width={242} height={200} alt="242x200">
-                      <RatingSystem rating={location.rating}/>
+              <RatingSystem rating={location.rating}/>
                 <h3>{location.name}</h3>
                 <p>{location.region}</p>
                 <p>
-                  <Button bsStyle="primary">Visit</Button>&nbsp;
+                  <NavLink to={ `/Countries/Update/${location.id}` }><Button bsStyle="primary">Visit</Button></NavLink>
                 </p>
               </Thumbnail>
             </Col>
