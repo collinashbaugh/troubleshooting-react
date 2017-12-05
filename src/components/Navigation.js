@@ -14,7 +14,7 @@ class Navigation extends Component {
             </Navbar.Header>
             <Navbar.Collapse>
               <Nav>
-                <NavItem eventKey={1}>Countries</NavItem>
+                <NavItem eventKey={1}><Link to="/All-Countries">Countries</Link></NavItem>
                 <NavItem eventKey={2}><Link to="/Highest-Rated">Highest Rated</Link></NavItem>
                 <NavItem eventKey={3}>Most Visited</NavItem>
               </Nav>

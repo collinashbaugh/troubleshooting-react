@@ -10,6 +10,7 @@ import SignUp from './components/SignUp.js'
 import CountriesList from './countries/CountriesList.js'
 import DeleteCountry from './countries/RemoveCountry'
 import UpdateCountry from './countries/UpdateCountry'
+import AllCountries from './countries/AllCountires'
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
           <Route exact path="/Countries/Update/:id" component={UpdateCountry}/>
           <Route exact path="/" component={Slider}/>
           <Route path="/Highest-Rated" component={CountriesList} />
+          <Route path="/All-Countries" component={AllCountries}/>
           {/* <Route path="/LogIn" component={LogIn} /> */}
           <Route path="/SignUp" component={SignUp} />
         </div>
